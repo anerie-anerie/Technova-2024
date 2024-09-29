@@ -1,0 +1,62 @@
+/* Container styling for the Home component */
+.home-container {
+    margin: 40px auto;
+    padding: 20px;
+    max-width: 900px;
+    text-align: center;
+    background-color: #FFFDD0;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Style for the heading */
+  .home-container h1 {
+    font-size: 3rem;
+    color: #2c3e50;
+    margin-bottom: 20px;
+  }
+  
+  /* Style for the paragraph */
+  .home-container p {
+    font-size: 1.2rem;
+    color: #34495e;
+    margin-bottom: 30px;
+  }
+  
+  /* Image container styling */
+.image-container {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 30px;
+  }
+  
+  /* Style for the images */
+  .image-container img {
+    width: 50%;  /* Set width to 50% */
+    max-width: 150px;  /* You can limit the max-width if needed */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Responsive design for smaller screens */
+  @media (max-width: 768px) {
+    .image-container {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .image-container img {
+      width: 50%;  /* Keep width at 50% for smaller screens */
+      max-width: 100px;  /* Further reduce the max-width for smaller screens */
+      margin-bottom: 20px;
+    }
+  
+    .home-container h1 {
+      font-size: 2.5rem;
+    }
+  
+    .home-container p {
+      font-size: 1.1rem;
+    }
+  }
+  
