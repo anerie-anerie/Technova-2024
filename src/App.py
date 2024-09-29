@@ -1,28 +1,36 @@
-try:
-    import streamlit as st
-    import pandas as pd
-    import os
-    import sys
-    from io import BytesIO, StringIO
+import streamlit as st
+import os
+import shutil
 
-except Exception as e:
-    print("Some Modules are Missing: {}".format(e))
+def save_uploaded_file(uploaded_file):
+    savedir = "/users/anerie/technova-24/InputImg"
+    if not os.path.exists(savedir):
+        os.makedirs(savedir)
 
-def main():
-    st.info(__doc__)
-    st.markdown(STYLE, unsafe_allow_html = True)
-    file = st.file_uploader(label = "Uplooad your file here: ", type = ["png","jpg"])
-    show_file = st.empty()
+    file_path = os.path.join(savedir, uploaded_file.name)
+    with open(file_path, "wb") as f:
+        f.write(uploaded_file.getbuffer())
 
-    if not file:
-        show_file.info("Please upload a file: {}".format("".join(["png","jpg"])))
-        return
+    return file_path
 
-    content = file.getvalue()
+def image_dropboxes():
+    labels = ["nail image", "palm image", "eye image"]
+    image_files = {}
 
-    if isistance(file, BytesIO):
-        show_file.image(file)
-    file.close()
+    for label in labels:
+        file = st.file_uploader(label=f"Upload your {label} here:", type=["png", "jpg"])
 
+        if file:
+            # Display the uploaded file
+            st.image(file, caption=label)
 
-main()
+            # Add a submit button for each file
+            if st.button(f"Submit {label}"):
+                # Save the uploaded file
+                file_path = save_uploaded_file(file)
+                image_files[label] = file_path
+                st.success(f"{label} has been saved to {file_path}.")
+        else:
+            st.warning(f"Please upload a(n) {label} (png or jpg).")
+
+image_dropboxes()
