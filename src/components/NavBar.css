@@ -23,33 +23,56 @@ body {
   position: relative;
 }
 
+/* Ensure the navbar uses flexbox for alignment */
 .navbar-custom {
-    background-color: #4787ff; /* Example: tomato color */
+    background-color: #4787ff;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /* Center items vertically */
+    padding: 0 20px; /* Add some horizontal padding for spacing */
+  }
+  
+  /* Style for the brand and nav-links */
+  .navbar-custom .navbar-brand,
+  .navbar-custom .nav-link {
     color: white;
   }
   
-  .navbar-custom .navbar-brand,
-  .navbar-custom .nav-link {
-    color: white; /* Set the text color to white */
-  }
-  
   .navbar-custom .nav-link:hover {
-    color: #FFD700; /* Example: gold color on hover */
+    color: #FFD700;
   }
-
+  
+  /* Ensure hover works even on active links */
   .navbar-custom .nav-link.active {
-    color: white !important; /* Override Bootstrap's default black color for active links */
-  }
-
-  /* Ensuring hover works even on active links */
-.navbar-custom .nav-link.active:hover {
-    color: yellow !important; /* Force the hover color to apply even on active links */
+    color: white !important;
   }
   
+  .navbar-custom .nav-link.active:hover {
+    color: yellow !important;
+  }
   
-.logo {
-}
-
+  /* Logo container on the right */
+  .navbar-logo {
+    margin-left: auto; /* This pushes the logo to the right */
+  }
+  
+  .logo-img {
+    height: 50px;
+    width: auto;
+  }
+  
+  /* Make the logo responsive on smaller screens */
+  @media (max-width: 768px) {
+    .navbar-logo {
+      margin-top: 10px;
+    }
+  
+    .logo-img {
+      height: 40px;
+    }
+  }
+  
 .menu-icon {
   display: none;
 }
