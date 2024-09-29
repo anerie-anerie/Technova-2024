@@ -6,7 +6,7 @@ const brandName: string = "Iron Will";
 
 const NavBar: React.FC = () => {
   return (
-    <nav className="navbar navbar-expand-lg bg-primary navbar-dark">
+    <nav className="navbar navbar-expand-lg navbar-custom">
       <div className="container-fluid">
         <Link className="navbar-brand" to="/">
           {brandName}
