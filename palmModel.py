@@ -6,6 +6,7 @@ from sklearn.metrics import classification_report, confusion_matrix
 import numpy as np
 import matplotlib.pyplot as plt
 import seaborn as sns
+import keras
 
 # custom preprocessing with random sizing to account for different people's nail sizes and apperances
 def custom_preprocessing(image):
