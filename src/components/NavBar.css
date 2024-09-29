@@ -23,6 +23,30 @@ body {
   position: relative;
 }
 
+.navbar-custom {
+    background-color: #4787ff; /* Example: tomato color */
+    color: white;
+  }
+  
+  .navbar-custom .navbar-brand,
+  .navbar-custom .nav-link {
+    color: white; /* Set the text color to white */
+  }
+  
+  .navbar-custom .nav-link:hover {
+    color: #FFD700; /* Example: gold color on hover */
+  }
+
+  .navbar-custom .nav-link.active {
+    color: white !important; /* Override Bootstrap's default black color for active links */
+  }
+
+  /* Ensuring hover works even on active links */
+.navbar-custom .nav-link.active:hover {
+    color: yellow !important; /* Force the hover color to apply even on active links */
+  }
+  
+  
 .logo {
 }
 
