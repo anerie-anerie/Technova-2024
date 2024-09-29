@@ -1,9 +1,9 @@
 import streamlit as st
 import os
-import sys
 import shutil
 
-sys.path.append('/Users/anerie/technova-24')
+import sys
+sys.path.append('/Users/anerie/Desktop/technova-24/')
 from anemicScore import aScoring
 
 # Function to save uploaded files
@@ -63,7 +63,7 @@ def main():
             score = aScoring(nail_img, palm_img, eye_img)
 
             # Display the calculated score
-            st.success(f"Anemia Score: {score}")
+            st.success(f"Anemia Score: {score}.2f")
 
             # Clear the InputImg folder after the calculation
             clear_input_folder()
