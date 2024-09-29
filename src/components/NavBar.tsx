@@ -1,6 +1,7 @@
 import React from "react";
 import "./NavBar.css";
 import { Link } from "react-router-dom";
+import logo from "./logo.png";
 
 const brandName: string = "Iron Will";
 
@@ -55,6 +56,10 @@ const NavBar: React.FC = () => {
               </Link>
             </li>
           </ul>
+
+          <div className="navbar-logo">
+            <img src={logo} alt="Logo" className="logo-img" />
+          </div>
         </div>
       </div>
     </nav>
