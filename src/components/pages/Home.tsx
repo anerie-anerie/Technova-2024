@@ -10,7 +10,11 @@ const Home: React.FC = () => {
         <p>Your resource for understanding and managing anemia.</p>
       </div>
       <div className="image-container">
-        <img src={anemiaImage1} alt="Anemia information 1" />
+        <img
+          src={anemiaImage1}
+          alt="Anemia information"
+          style={{ width: "300px", height: "auto" }} // Explicit inline style
+        />
       </div>
     </div>
   );
